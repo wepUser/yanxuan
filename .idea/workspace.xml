@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13ff8350-1bfb-46e1-b285-6a9e3f56ff50" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/static/media/author.a4b9d955.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/static/media/iconfont.5f7d6cf8.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/static/media/iconfont.e8bd6d5e.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/font/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/font/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/font/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/env.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/jest/cssTransform.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/jest/fileTransform.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/paths.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/polyfills.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/webpack.config.dev.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/webpack.config.prod.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/webpackDevServer.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/asset-manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/service-worker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/static/css/main.d5bf669a.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/static/css/main.d5bf669a.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/static/js/main.ce9cc971.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/static/js/main.ce9cc971.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/static/media/iconfont.c648eaa2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/build.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/start.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/goodDetail/GoodDetail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/main/Main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/main/author/Author.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/main/home/Home.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/main/shopChart/ShopChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/main/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/container/router/Router.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/registerServiceWorker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/css/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/css/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/font/iconfont.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/font/iconfont.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static/font/iconfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yarn.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -393,16 +343,15 @@
       <option name="presentableId" value="Default" />
       <updated>1527728543354</updated>
       <workItem from="1527728548120" duration="9148000" />
-      <workItem from="1527755564387" duration="3517000" />
+      <workItem from="1527755564387" duration="4187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12665000" />
+    <option name="totallyTimeSpent" value="13335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -411,7 +360,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
