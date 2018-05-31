@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,body,div,p,ul,li,ol,dl,dd,dt,table,tbody,thead,h1
+,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    font-size: 0.14rem;
+    font-family: PingFangSC-Light,helvetica,'Heiti SC';
+    vertical-align: baseline;
+}
