@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {Component}from 'react';
 import {NavLink, Route} from 'react-router-dom';
 import './style.less';
@@ -5,6 +6,17 @@ import './style.less';
 import Home from './home/Home';
 import ShopChart from './shopChart/ShopChart';
 import Author from './author/Author';
+=======
+/**
+ * desc：
+ * author：
+ * date：
+ */
+import React, {Component}from 'react';
+import {HashRouter, Route, Redirect} from 'react-router-dom';
+
+import Home from './home/Home';
+>>>>>>> ff98fdd784b08e607a27c78f8dbd6d12af5486e3
 
 class Main extends React.Component {
 
@@ -27,6 +39,7 @@ class Main extends React.Component {
 
     render() {
         return (
+<<<<<<< HEAD
             <div className="main">
                 <div className="router-view">
                     <Route exact path="/main/home" component={Home}/>
@@ -47,6 +60,10 @@ class Main extends React.Component {
                         <span>作者</span>
                     </NavLink>
                 </nav>
+=======
+            <div>
+                <Route path="/main/home" component={Home}/>
+>>>>>>> ff98fdd784b08e607a27c78f8dbd6d12af5486e3
             </div>
         );
     }
