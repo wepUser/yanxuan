@@ -1,0 +1,24 @@
+.scroll-content {
+  display: -webkit-box;
+  .item {
+    position: relative;
+    white-space: nowrap;
+    padding: 0 .15rem;
+    line-height: .3rem;
+    &.active {
+      color: #b4282d;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 70%;
+        height: .02rem;
+        background: #b4282d;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+      }
+    }
+
+  }
+
+}

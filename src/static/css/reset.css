@@ -13,3 +13,9 @@ html,body,div,p,ul,li,ol,dl,dd,dt,table,tbody,thead,h1
     font-family: PingFangSC-Light,helvetica,'Heiti SC';
     vertical-align: baseline;
 }
+
+input{
+    outline: none;
+    border: 0;
+    background-color: transparent;
+}
