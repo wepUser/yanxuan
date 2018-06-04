@@ -4,7 +4,8 @@
  * date：
  */
 import React, {Component}from 'react';
-import BScroll from 'better-scroll'
+import BScroll from 'better-scroll';
+import './style.less';
 
 
 class Xscroll extends React.Component {

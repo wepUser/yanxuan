@@ -1,0 +1,35 @@
+@import "../../static/css/mixin";
+
+.scroll-wrapper {
+  ul {
+    white-space: nowrap;
+    li {
+      display: inline-block;
+      width: 1.56rem;
+      padding-left: .15rem;
+      img {
+        width: 100%;
+        height: 100%;
+        background: #f4f4f4;
+        margin-bottom: .2rem;
+      }
+      .content {
+        padding: 0 .1rem;
+        .name {
+          .ellipsis();
+          font-size: .15rem;
+          margin-bottom: .1rem;
+          color: #333;
+        }
+        .describe {
+          .ellipsis();
+          font-size: .13rem;
+        }
+        .price {
+          color: #b4282d;
+          font-size: .15rem;
+        }
+      }
+    }
+  }
+}

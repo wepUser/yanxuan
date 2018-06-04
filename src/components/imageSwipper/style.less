@@ -1,0 +1,21 @@
+.swipe-wrapper {
+  position: relative;
+  .index-container {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    bottom: 3%;
+    .dot {
+      display: inline-block;
+      width: 15px;
+      height: 3px;
+      background: #d6d7d8;
+      margin-right: 10px;
+      &.selected {
+        background: #b4282d;
+      }
+    }
+  }
+}
