@@ -1,20 +1,43 @@
 import React, {Component}from 'react';
 import {NavLink, Route} from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import './style.less';
 
 import Home from './home/Home';
 import ShopChart from './shopChart/ShopChart';
 import Author from './author/Author';
+import ShopCar from '../../components/shopCar/ShopCar';
 
 
 class Main extends React.Component {
-
+    static contextTypes = {
+        store: PropTypes.object
+    };
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {};
+        this.store=null;
     }
 
+    componentWillMount(){
+        const {store} = this.context;
+        this.store=store;
+    }
 
+    componentDidMount(){
+        this._getCarNum();
+    }
+
+    _getCarNum(){
+        let num=this.store.getState().shopCarReducer.reduce((total,good)=>{
+            return total+good.num
+        },0);
+
+        this.iconRef.setState({
+            num:num
+        })
+    }
 
     render() {
         return (
@@ -30,7 +53,8 @@ class Main extends React.Component {
                         <span>首页</span>
                     </NavLink>
                     <NavLink exact to="/main/shopChart" activeClassName='active' className="app-nav-link">
-                        <i className="iconfont icon-gouwuche"></i>
+                        {/*<i className="iconfont icon-gouwuche"></i>*/}
+                        <ShopCar ref={(ref)=>this.iconRef=ref}/>
                         <span>购物车</span>
                     </NavLink>
                     <NavLink exact to="/main/author" activeClassName="active" className="app-nav-link">

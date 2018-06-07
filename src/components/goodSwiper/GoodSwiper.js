@@ -11,7 +11,7 @@ import './style.less';
 
 class GoodSwiper extends React.Component {
     static contextTypes = {
-        store: PropTypes.object
+        store: PropTypes.object,
     };
 
     constructor(props) {

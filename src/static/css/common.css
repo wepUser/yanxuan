@@ -10,3 +10,20 @@ li{
     list-style: none;
 }
 
+
+input[type='checkbox']{
+    width: .18rem;
+    height: .18rem;
+    -webkit-appearance: none;
+    border: 1px solid #c9c9c9;
+}
+
+input[type='checkbox']:checked{
+    background: url('../image/gou.png') no-repeat center;
+    background-size: 100% 100%;
+}
+
+img{
+    vertical-align: baseline;
+}
+
