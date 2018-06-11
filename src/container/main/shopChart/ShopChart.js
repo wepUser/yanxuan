@@ -4,95 +4,117 @@
  * date：
  */
 import React, {Component}from 'react';
+import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+import {bullElement} from '../../../static/util/util';
 import './style.less';
 import defaultImg from './defaultCar.png';
+import {addShopCarGood, deleteShopCarGood} from '../../../store/index';
 
 import PolicyList from '../../../components/policyList/PolicyList';
 
-const mapStateToProps=(state)=>{
+const mapStateToProps = (state) => {
     return {
-        goods:state.shopCarReducer
+        goods: state.shopCarReducer
     }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        addShopCarGood,
+        deleteShopCarGood
+    },dispatch)
 };
 
 class ShopChart extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state={
-            select:props.goods.reduce((map,good,index)=>{
-                map[index]=true;
+        this.state = {
+            select: props.goods.reduce((map, good, index) => {
+                map[index] = true;
                 return map
-            },{})
+            }, {})
         }
     }
 
-    handleSelect(e,index){
-        let checked=e.target.checked;
-        let select=this.state.select;
-        select[index]=checked;
+    handleSelect(e, index) {
+        let checked = e.target.checked;
+        let select = this.state.select;
+        select[index] = checked;
         this.setState({
             select
         })
     }
 
-    handleSelectAll(e){
-        let checked=e.target.checked;
-        let select=this.state.select;
-        Object.keys(select).forEach(key=>select[key]=checked);
+    handleSelectAll(e) {
+        let checked = e.target.checked;
+        let select = this.state.select;
+        Object.keys(select).forEach(key => select[key] = checked);
         this.setState({
             select
         })
     }
 
 
-    add(){
+    handleControl(type,index,e) {
+        let {goods,addShopCarGood,deleteShopCarGood} =this.props;
+        let currentGood=goods[index];
+        switch (type){
+            case 'DELETE_GOOD':
+                if(currentGood.num<=1){
+                    return false
+                }
+                deleteShopCarGood(currentGood);
+                break;
+            case 'ADD_GOOD':
+                bullElement(e,ReactDOM.findDOMNode(this.inputRef));
+                addShopCarGood(currentGood);
+                break;
+            default:
+                return
+        }
 
     }
 
-    decrease(){
-
-    }
 
 
 
-
-    pay(){
+    pay() {
         alert('下订单了')
     }
 
-    toolTip(price){
-        if(price<140){
+    toolTip(price) {
+        if (price < 140) {
             return '再购140元包邮'
-        }else if(price<288){
+        } else if (price < 288) {
             return '再购11元包邮'
-        }else{
+        } else {
             return '满够包邮正品'
         }
     }
 
 
     render() {
-        let {goods}=this.props;
-        let {select}=this.state;
+        let {goods} = this.props;
+        let {select} = this.state;
 
-        let selectGoods=goods.filter(function (good,index) {
+        let selectGoods = goods.filter(function (good, index) {
             return select[index]
         });
 
-        let tNum=0;
-        let tPrice=0;
-        selectGoods.forEach(function (good,index) {
-            tNum+=good.num;
-            tPrice+=good.num*good.price
+        let tNum = 0;
+        let tPrice = 0;
+        selectGoods.forEach(function (good, index) {
+            tNum += good.num;
+            tPrice += good.num * good.price
         });
 
 
-        let checkAll=Object.keys(select).every(key=>select[key]);
+        let checkAll = Object.keys(select).every(key => select[key]);
 
-        let discountClass=checkAll?'placeOrder':'disableOrder';
+        let discountClass = checkAll ? 'placeOrder' : 'disableOrder';
 
         return (
             <div>
@@ -109,7 +131,8 @@ class ShopChart extends React.Component {
                         return (
                             <div key={index} className="good_item">
                                 <div className="radio">
-                                    <input type="checkbox" name={good.name} checked={this.state.select[index]} onChange={e=>this.handleSelect(e,index)}/>
+                                    <input type="checkbox" name={good.name} checked={this.state.select[index]}
+                                           onChange={e => this.handleSelect(e, index)}/>
                                 </div>
                                 <div className="good_img">
                                     <img src={good.img} alt=""/>
@@ -120,9 +143,11 @@ class ShopChart extends React.Component {
                                 </div>
                                 <div className="good_control">
                                     <div>
-                                        <input type="button" value="-" className="decrease" onTouchStart={this.decrease.bind(this)}/>
-                                        <input type="number" defaultValue={good.num} className="sum"/>
-                                        <input type="button" value="+" className="add" onTouchStart={this.add.bind(this)}/>
+                                        <input type="button" value="-" className="decrease"
+                                               onTouchStart={this.handleControl.bind(this,'DELETE_GOOD',index)}/>
+                                        <input type="number"  className="sum" value={good.num} readOnly/>
+                                        <input type="button" value="+" className="add"
+                                               onTouchStart={this.handleControl.bind(this,'ADD_GOOD',index)}/>
                                     </div>
                                 </div>
                             </div>
@@ -132,9 +157,11 @@ class ShopChart extends React.Component {
                 {
                     goods.length > 0 ?
                         <section className="shopCar_bottom">
-                            <div className="selected"><input type="checkbox" checked={checkAll} onChange={e=>this.handleSelectAll(e)}/><span>已选({tNum})</span></div>
+                            <div className="selected" ref={(ref)=>this.inputRef=ref}><input type="checkbox" checked={checkAll}
+                                                             onChange={e => this.handleSelectAll(e)}/><span>已选({tNum})</span>
+                            </div>
                             <div className="priceTotal">￥{tPrice}</div>
-                            <div className={discountClass} onTouchStart={e=>this.pay()}>下单</div>
+                            <div className={discountClass} onTouchStart={e => this.pay()}>下单</div>
                         </section> : null
                 }
             </div>
@@ -146,4 +173,4 @@ class ShopChart extends React.Component {
     }
 }
 
-export default connect(mapStateToProps)(ShopChart)
+export default connect(mapStateToProps,mapDispatchToProps)(ShopChart)

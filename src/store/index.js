@@ -1,4 +1,5 @@
 import {createStore, combineReducers} from 'redux';
+import { composeWithDevTools  } from 'redux-devtools-extension';
 
 //初始store
 const defaultStore = {
@@ -69,8 +70,13 @@ const rootReducer = combineReducers({
     shopCarReducer
 });
 
-export const store = createStore(rootReducer);
+export const store = createStore(rootReducer,composeWithDevTools());
 
-
+/*商品数量*/
+export const goodSum=()=>{
+    return store.getState().shopCarReducer.reduce((total,good)=>{
+        return total+=good.num
+    },0)
+};
 
 

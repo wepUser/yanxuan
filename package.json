@@ -99,7 +99,8 @@
   },
   "devDependencies": {
     "less": "^3.0.2",
-    "less-loader": "^4.1.0"
+    "less-loader": "^4.1.0",
+    "redux-devtools-extension": "^2.13.2"
   },
   "homepage": "."
 }

@@ -4,6 +4,8 @@
  * date：
  */
 import React, {Component}from 'react';
+import wei from '../../../static/image/weixin.jpg';
+import './style.less'
 
 class Author extends React.Component {
 
@@ -12,22 +14,18 @@ class Author extends React.Component {
         this.state = {}
     }
 
-    componentDidMount() {
-
-    }
-
-    componentDidUpdate() {
-
-    }
-
-    componentWillUnmount() {
-
-    }
 
     render() {
         return (
             <div>
-                author
+                <header className="author-header"></header>
+                <section className="author-wrapper">
+                    <img src={wei} alt=""/>
+                    <p>技术交流，请扫描二维码加好友</p>
+                </section>
+                <footer className="author-footer">
+                    https://github.com/wepUser/yanxuan.git
+                </footer>
             </div>
         );
     }

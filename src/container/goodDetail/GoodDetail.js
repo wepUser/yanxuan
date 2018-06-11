@@ -2,60 +2,44 @@
  * desc：商品详情页
  */
 import React, {Component}from 'react';
-import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+import {store,addShopCarGood} from '../../store/index';
 import {withRouter} from 'react-router-dom';
-import {isEmpty} from '../../static/util/util';
+import {isEmpty,bullElement} from '../../static/util/util';
 import './style.less';
 import PolicyList from '../../components/policyList/PolicyList';
 import ShopCar from '../../components/shopCar/ShopCar';
 
 class GoodDetail extends React.Component {
-    static contextTypes = {
-        store: PropTypes.object
-    };
-
     constructor(props) {
         super(props);
         this.state = {};
         this.goods = null;
-        this.store=null;
     }
 
     componentWillMount() {
-        const {store} = this.context;
         const data = store.getState().goodReducer;
         if(isEmpty(data)){
             this.toHome();
         }
         this.goods=data;
-        this.store=store;
     }
 
-    componentDidMount(){
-        this._getCarNum();
-    }
-
-    _getCarNum(){
-        let num=this.store.getState().shopCarReducer.reduce((total,good)=>{
-            return total+good.num
-        },0);
-
-        this.iconRef.setState({
-            num:num
-        })
-    }
 
     toHome=()=>this.props.history.push('/main/home');
 
-    toShopCar=()=>{
-        this.store.dispatch({type:'ADD_GOOD',good:this.goods});
-        this._getCarNum();
-        this.props.history.push('/main/shopChart')
+    toShopCar=(e)=>{
+        bullElement(e,ReactDOM.findDOMNode(this.iconRef)).then(()=>{
+            store.dispatch(addShopCarGood(this.goods));
+            this.props.history.push('/main/shopChart');
+        });
+
     };
 
-    handleShopCar(){
-        this.store.dispatch({type:'ADD_GOOD',good:this.goods});
-        this._getCarNum();
+    handleShopCar(e){
+        bullElement(e,ReactDOM.findDOMNode(this.iconRef)).then(()=>{
+            store.dispatch(addShopCarGood(this.goods));
+        });
     }
 
     render() {
@@ -97,8 +81,8 @@ class GoodDetail extends React.Component {
                 </section>
                 <footer className="good_foot">
                     <div><i className="iconfont icon-fanhui" onClick={this.toHome.bind(this)}></i></div>
-                    <div><span onClick={this.toShopCar.bind(this)}>立即购买</span></div>
-                    <div><span onClick={this.handleShopCar.bind(this)}>加入购物车</span></div>
+                    <div><span onTouchStart={this.toShopCar.bind(this)}>立即购买</span></div>
+                    <div><span onTouchStart={this.handleShopCar.bind(this)}>加入购物车</span></div>
                 </footer>
             </div>
         );

@@ -1,6 +1,5 @@
 import React, {Component}from 'react';
 import {NavLink, Route} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import './style.less';
 
@@ -11,33 +10,11 @@ import ShopCar from '../../components/shopCar/ShopCar';
 
 
 class Main extends React.Component {
-    static contextTypes = {
-        store: PropTypes.object
-    };
     constructor(props) {
         super(props);
         this.state = {};
-        this.store=null;
     }
 
-    componentWillMount(){
-        const {store} = this.context;
-        this.store=store;
-    }
-
-    componentDidMount(){
-        this._getCarNum();
-    }
-
-    _getCarNum(){
-        let num=this.store.getState().shopCarReducer.reduce((total,good)=>{
-            return total+good.num
-        },0);
-
-        this.iconRef.setState({
-            num:num
-        })
-    }
 
     render() {
         return (
@@ -54,7 +31,7 @@ class Main extends React.Component {
                     </NavLink>
                     <NavLink exact to="/main/shopChart" activeClassName='active' className="app-nav-link">
                         {/*<i className="iconfont icon-gouwuche"></i>*/}
-                        <ShopCar ref={(ref)=>this.iconRef=ref}/>
+                        <ShopCar/>
                         <span>购物车</span>
                     </NavLink>
                     <NavLink exact to="/main/author" activeClassName="active" className="app-nav-link">

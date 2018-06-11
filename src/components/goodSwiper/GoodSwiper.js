@@ -34,10 +34,12 @@ class GoodSwiper extends React.Component {
         const {goods} = this.props;
         return (
             <Xscroll>
-                <ul>
+                <ul className="good-list">
                     {goods.map((item, index) => {
-                        return <li key={index} onClick={() => this.handleClick(index)}>
-                            <img src={item.img} alt=""/>
+                        return <li key={index} onClick={() => this.handleClick(index)} className="item">
+                            <div className="img-wrapper">
+                                <img src={item.img} alt=""/>
+                            </div>
                             <div className="content">
                                 <p className="name">{item.name}</p>
                                 <p className="describe">{item.describe}</p>
